@@ -1,39 +1,43 @@
-<script lang="ts">
-  function con() {
-    console.log('copdsh')
-  }
-</script>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="popup.js"></script>
 </head>
 
 <body>
-  <div class="holder">
-    <h1>Enter Length</h1>
-    <input type="text" id="" >
-  </div>
-  
+	<div class="holder">
+		<h1>Enter Length</h1>
+		<!-- <input type="text" id="" maxlength="2"> -->
+		<input type="range" min="8" max="60" value="30" class="slider" id="slider">
+		<div class="inpHolder">
+			<input id="sliderVal" value="30">
+		</div>
+	</div>
+
+	<h1 id="password">gg</h1>
+
 
 </body>
 
 </html>
 
 <style>
-   @font-face {
+	@font-face {
 		font-family: 'Circular';
 		src: url('/static/fonts/CircularStd-Book.otf');
 	}
+
 	body {
 		overflow-x: hidden;
 		margin: 0;
 		padding: 0;
 		border: 0;
+		min-width: 300px;
+		min-height: 150px;
 		/* height: 1000vh; */
 
 		background-color: #141414;
@@ -51,10 +55,102 @@
 		box-sizing: border-box;
 		font-family: Circular;
 		font-weight: 300;
-	} 
+	}
+
+	.holder {
+		width: 200px;
+		margin: 0 auto;
+	}
+
+	.inpHolder {
+		margin-top: 13px;
+	}
+
+	h1 {
+		color: white
+	}
 
 	input {
 		width: 50px;
 		color: black;
+		border-radius: 100px;
+	}
+
+	input[type=range]::-moz-range-track {
+		border-radius: 100px;
+	}
+
+	.slider {
+		margin-top: 10px;
+		-webkit-appearance: none;
+		/* Override default CSS styles */
+		appearance: none;
+		width: 200px;
+		/* Full-width */
+		height: 10px;
+
+		/* Specified height */
+		background: #00dbdb;
+		/* Grey background */
+		outline: none;
+		/* Remove outline */
+		opacity: 0.7;
+		/* Set transparency (for mouse-over effects on hover) */
+		-webkit-transition: .2s;
+		/* 0.2 seconds transition on hover */
+		transition: opacity .2s;
+		
+	}
+
+	.slider::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		/* Override default look */
+		appearance: none;
+		width: 25px;
+		/* Set a specific slider handle width */
+		height: 25px;
+		/* Slider handle height */
+		background: #00dbdb;
+		/* Green background */
+		cursor: pointer;
+		/* Cursor on hover */
+		border: 2px solid #121212;
+		border-radius: 100px;
+	}
+
+	.slider::-moz-range-thumb {
+		width: 25px;
+		/* Set a specific slider handle width */
+		height: 25px;
+		/* Slider handle height */
+		background: #00dbdb;
+		/* Green background */
+		cursor: pointer;
+		/* Cursor on hover */
+		border: 2px solid #121212;
+		/* Cursor on hover */
+		;
+		border-radius: 100px;
+	}
+
+	input[type="range"]::-moz-range-progress {
+		background-color: #00dbdb;
+		height: 100%;
+	}
+
+	input[type="range"]::-moz-range-track {
+		background-color: #272727;
+		height: 100%;
+	}
+
+	/* IE*/
+	input[type="range"]::-ms-fill-lower {
+		background-color: #00dbdb;
+		height: 100%;
+	}
+
+	input[type="range"]::-ms-fill-upper {
+		background-color: #272727;
+		height: 100%;
 	}
 </style>
