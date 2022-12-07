@@ -18,9 +18,10 @@
 		</div>
 	</div>
 
-	<h1 id="password">gg</h1>
-
-
+	<div class="passwordHolder">
+		<h1 id="password"></h1>
+	</div>
+	<h2>Click the password to copy it</h2>
 </body>
 
 </html>
@@ -37,11 +38,8 @@
 		padding: 0;
 		border: 0;
 		min-width: 300px;
-		min-height: 150px;
-		/* height: 1000vh; */
-
+		min-height: 190px;
 		background-color: #141414;
-		/* overflow: hidden; */
 	}
 
 	* {
@@ -57,13 +55,42 @@
 		font-weight: 300;
 	}
 
+	h2 {
+		font-size: 15px;
+	}
+
+	.passwordHolder {
+		width: 270px;
+		height: 30px;
+		margin: 0 auto;
+		margin-top: 15px;
+	}
+
+	#password {
+		font-size: 20px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
 	.holder {
 		width: 200px;
 		margin: 0 auto;
+		margin-top: 20px;
 	}
 
 	.inpHolder {
-		margin-top: 13px;
+		margin-top: 7px !important;
+		width: 50px;
+		height: 30px;
+		background: #272727;
+		margin: 0 auto;
+		border-radius: 5px;
+	}
+	
+	#sliderVal {
+		background: none;
+		color: white;
 	}
 
 	h1 {
@@ -99,7 +126,7 @@
 		-webkit-transition: .2s;
 		/* 0.2 seconds transition on hover */
 		transition: opacity .2s;
-		
+
 	}
 
 	.slider::-webkit-slider-thumb {
